@@ -608,12 +608,16 @@ nav a{
 @media (min-width: 1076px) {
     nav ul {
         width: 70%;
-        top: .5vh;
+        top: 2.2vh;
         left: 0;
         margin-left: 15%;
-        max-height: 150px;
+        max-height: 80px;
         background-color: transparent;
         box-shadow: none;
+    }
+
+    nav img {
+        max-height: 140px;
     }
 
     #banner {
@@ -630,7 +634,7 @@ nav a{
     }
 
     nav ul li:first-child {
-        top: 2vw;
+        top: .9vh;
         left: -13.5vw;
     }
 
