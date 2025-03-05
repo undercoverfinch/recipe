@@ -1,0 +1,794 @@
+/* ===============FONT IMPORTS============== */
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* ===============RESET============== */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body, h1, h2, h3, h4, p,
+figure, blockquote, dl, dd {
+  margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1, h2, h3, h4,
+button, input, label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1, h2,
+h3, h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input, button,
+textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Make sure text areas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* ============GLOBAL=========== */
+
+:root {
+    --black: #0D0D0D;
+    --white: #F2F2F2;
+    --cyan: #7ABFBF;
+    --light-cyan: rgba(122, 191, 191, .5);
+    --orange: #EB5428;
+    --true-white: #fff;
+}
+
+
+body {
+    background-color: var(--light-cyan);
+    min-width: 342px;
+}
+
+body > * {
+    background-color: var(--white);
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
+h1, h2, h3, nav a, nav span, menu li, #social li, footer{
+    font-family: "Bebas Neue", Tahoma, Arial, sans-serif;
+}
+
+h1 {
+    font-size: 40px;
+    text-align: center;
+    padding-bottom: 15px;
+}
+
+h2 {
+    font-size: 30px;
+}
+
+h3 {
+    font-size: 25px;
+}
+
+nav a, nav span, menu li, #social li, footer, small, cite {
+    font-size: 20px;
+}
+
+p, dd, li, nav, input, dt {
+    font-family: Montserrat, Verdana, Arial, sans-serif;
+    font-size: 16px;
+}
+
+
+dt, .bold {
+    font-weight: 700;
+}
+
+
+
+#site-search {
+    font-family: Montserrat, Verdana, Arial, sans-serif;
+    font-size: 12px;
+    padding: 5px;
+}
+
+h1 {
+    padding-top: 175px;
+}
+
+#banner {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    margin-left: 25px;
+    margin-right: 25px;
+    top: 0;
+    left: 0;
+    width: calc(100% - 50px);
+    height: 90px;
+    background-color: var(--true-white);
+    box-shadow: 0 4px 3px rgb(0 0 0 / 0.2);
+    
+}
+
+.hidden-text, #home, nav ul li:not(:first-child):not(:nth-child(2)) {
+    display: none;
+}
+
+#nav-opener {
+    height: 90px;
+    width: 90px;
+    position: absolute;
+    top: -90px;
+    left: 0;
+    opacity: 0;
+}
+
+nav ul li:nth-child(2):hover ~ li {
+    visibility: visible;
+    display: block !important;
+}
+
+
+nav ul {
+    position: absolute;
+    top: 90px;
+    left: 0;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 10px;
+    margin-top: -20px;
+    background-color: var(--true-white);
+    z-index: 1;
+}
+
+nav ul li:first-child {
+    position: relative;
+    top: -55px;
+    left: 200%;
+    margin-bottom: -70px;
+}
+
+nav ul li:not(:first-child){
+    text-align: center;
+    padding: 5px;
+}
+
+
+nav img{
+    width: 60%;
+    margin: 0 auto;
+}
+
+nav ul, menu, footer ul{
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+#burger svg, #avatar svg{
+    display: block;
+    justify-self: center; 
+    align-self: center;
+}
+
+#burger::after {
+    content: "Menu";
+}
+
+#avatar::after {
+    content: "Sign in/Up"
+}
+
+#burger, #avatar{
+    text-align: center;
+    font-family: "Bebas Neue", Tahoma, Arial, sans-serif;
+    font-size: 16px;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #EB5428;
+    height: 90px;
+}
+
+button {
+    background-color: var(--orange);
+
+}
+
+button, input {
+    border: 2px solid var(--orange);
+}
+
+button svg {
+    height: 30px;
+}
+
+input {
+    width: 175px;
+}
+
+#search {
+    display: flex;
+    position: absolute;
+    top: 115px;
+    left: calc(50% - 109px);
+}
+
+menu, footer ul {
+    color: var(--orange);
+    display: flex;
+    justify-content: space-evenly;
+}
+
+menu li a, footer ul li a {
+    display: flex;
+    flex-direction: column;
+    flex-flow: column-reverse;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+
+article h2, #intro p, #details, #ingredients, #directions {
+    margin: 0 15px;
+}
+
+#intro p{
+    padding-bottom: 10px;
+}
+
+article {
+    background-color: var(--white);
+}
+
+#intro img{
+    padding-bottom: 15px;
+}
+
+dl {
+    display: grid;
+    grid-template-columns: 1fr 2.5fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+}
+
+dd {
+    align-self: flex-start;
+}
+
+h2{
+    padding: 10px 0;
+    text-align: center;
+}
+
+#ingredients h2, #directions h2{
+    padding-bottom: 0;
+}
+
+#ingredients ul, #directions ol{
+    margin: 0 10px;
+}
+
+#ingredients ul {
+    list-style-type: square;
+}
+
+article li {
+    padding-left: 10px;
+    padding-top: 8px;
+}
+
+aside {
+    background-color: var(--cyan);
+}
+
+.aside-recipes {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-areas: 
+        "img description"
+        "img2 description2"
+        "img3 description3"
+        "img4 description4";
+    align-items: center;
+}
+
+aside img:nth-of-type(1) {
+    grid-area: img;
+}
+
+aside .description:nth-of-type(1) {
+    grid-area: description;
+}
+
+aside img:nth-of-type(2) {
+    grid-area: img2;
+}
+
+aside .description:nth-of-type(2) {
+    grid-area: description2;
+}
+
+aside img:nth-of-type(3) {
+    grid-area: img3;
+}
+
+aside .description:nth-of-type(3) {
+    grid-area: description3;
+}
+
+aside img:nth-of-type(4) {
+    grid-area: img4;
+}
+
+aside .description:nth-of-type(4) {
+    grid-area: description4;
+}
+
+.description {
+    display: flex;
+    flex-direction: column;
+}
+
+aside img {
+    width: 80%;
+    padding: 10px;
+    padding-right: 0;
+}
+
+.bar {
+    background-color: var(--white);
+    height: 30px;
+}
+
+footer {
+    padding-top: 40px;
+    padding-bottom: 80px;
+    background-color: var(--true-white);
+    text-align: center;
+}
+
+footer img {
+    margin: 0 auto;
+    width: 50%;
+    position: relative;
+}
+
+footer cite, footer small {
+    position: relative;
+    display: block;
+    font-style: normal;
+    top: 45vh;
+}
+
+footer cite {
+    line-height: 7px;
+}
+
+
+@media (min-width: 0) and (max-width: 473px) {
+    body > * {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    #banner {
+        width: 100%;
+        margin: 0;
+    }
+
+    input {
+        width: 100px;
+    }
+
+    #search {
+        left: calc(50% - 72px);
+
+    }
+
+    nav img {
+        width: 80%;
+    }
+
+    
+    nav a{
+        font-size: 6px;
+        margin-top: -10px;
+    }
+
+    footer cite, footer small {
+        top: 43vh;
+    }
+
+
+}
+
+@media (min-width: 799px) {
+nav li {
+    margin-bottom: -10px;
+}
+
+nav a{
+    font-size: 12px;
+}
+}
+
+
+@media (min-width: 800px) {
+    nav ul li {
+        display: block !important;
+    }
+
+    nav ul{
+        margin-top: -10px;
+        flex-direction: row;
+        width: 100%;
+        color: var(--orange);
+        box-shadow: 0 4px 3px rgb(0 0 0 / 0.2);
+
+    }
+
+    nav ul li:first-child {
+        position: absolute;
+        top: -78px;
+        left: 0;
+        margin-left: 1%;
+    }
+
+    nav a {
+        display: flex;
+        flex-direction: column-reverse;
+        font-size: 20px;
+        padding-top: 10px;
+
+
+    }
+    #burger {
+        display: none;
+    }
+
+    #site-search {
+        width: 240px;
+    }
+
+    #banner {
+        grid-template-columns: 1fr 8fr 1.5fr;
+        grid-template-areas: 
+        "logo blank-search sign-in";
+    }
+
+    #avatar {
+        grid-area: sign-in;
+        padding: 0 20px;
+    }
+
+    nav img {
+        width: 60%;
+        padding-top: 10px;
+    }
+
+    menu {
+       position: relative;
+       padding: 10px 0;
+       background-color: rgba(255, 255, 255, 0.5)
+    }
+
+    #intro img {
+        margin-top: -90px;
+    }
+
+    dl{
+        margin-left: 21%;
+        width: 100%;
+    }
+
+    dt {
+        text-align: right;
+        padding-right: 10px;
+    }
+
+    .ingredients-directions {
+        display: flex;
+    }
+
+    .aside-recipes {
+        display: grid;
+        grid-template-columns: 1fr 2.5fr 1fr 2.5fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: 
+        "img description img2 description2"
+        "img3 description3 img4 description4";
+    }
+
+    aside img{
+        padding: 10px 0;
+    }
+
+    .bar {
+        display: none;
+    }
+
+    footer {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+
+    footer li {
+        padding: 0 10px;
+    }
+
+    #social {
+        width: 65%;
+    }
+
+    footer img {
+        width: 60%;
+        margin-top: -30px;
+    }
+
+}
+
+@media (min-width: 800px) and (max-width: 1075px) {
+     #search {
+        position: absolute;
+        z-index: 1;
+        top: 20px;
+        left: 50%;
+    }
+
+    h1 {
+        margin-top: 6%;
+        text-align: left;
+        margin-left: 10px;
+    }
+    
+}
+
+@media (min-width: 1076px) {
+    nav ul {
+        width: 70%;
+        top: 2vh;
+        left: 0;
+        margin-left: 15%;
+        background-color: transparent;
+        box-shadow: none;
+    }
+
+    #banner {
+        height: 15vh;
+    }
+
+    nav {
+        height: 15vh;
+        width: 8vw;
+    }
+
+    nav svg {
+        width: 150%;
+    }
+
+    nav ul li:first-child {
+        top: 2vw;
+        left: -13.5vw;
+    }
+
+
+    #search {
+        top: 17vh;
+        left: 39vw;
+    }
+
+    #site-search {
+        width: 20vw;
+    }
+
+   header {
+        margin-top: 10vh;
+        position: relative;
+    }
+
+    menu {
+        background-color: var(--true-white);
+        border: 1px solid var(--orange);
+        position: relative;
+        flex-direction: column;
+        top: 0;
+        max-width: 100px;
+        min-height: 92vh;
+        padding-top: 50px;
+        padding-bottom: 0;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 40px;
+        box-sizing: border-box;
+    }
+
+    menu li {
+        width: 70%;
+        font-size: 16px;
+    }
+
+    #intro {
+        display: grid;
+        grid-template-columns: 1fr 1.3fr;
+        margin-left: 8.35vw;
+        position: relative;
+        top: -92vh;
+    }
+
+
+    #intro img {
+        margin-top: 0;
+        height: 92vh;
+        padding-bottom: 0;
+    }
+
+    #intro p{
+        padding-top: 20px;
+        margin-right: 30px;
+    }
+
+    #avatar svg{
+        transform: scale(1.5);
+        max-height: 35px;
+        padding-bottom: 1vh;
+        padding-top: .5vh;
+        box-sizing: initial;
+    }
+
+    #details {
+        margin-top: -90vh;
+        color: var(--cyan);
+        background-color: var(--black);
+        width: 100%;
+        margin-left: 0;
+    }
+
+    dl {
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: 
+        "prep cook total author servings"
+        "prep-time cook-time total-time author-name serving-size";
+        margin: 0 auto;
+
+    
+    }
+
+    dt, dd {
+        padding: 0;
+        margin: 0;
+        text-align: center;
+    }
+
+    dl dt:nth-of-type(1) {
+        grid-area: prep;
+    }
+
+    dl dt:nth-of-type(2) {
+        grid-area: cook;
+    }
+
+    dl dt:nth-of-type(3) {
+        grid-area: total;
+    }
+
+    dl dt:nth-of-type(4) {
+        grid-area: author;
+    }
+
+    dl dt:nth-of-type(5) {
+        grid-area: servings;
+    }
+
+    dl dd:nth-of-type(1) {
+        grid-area: prep-time;
+    }
+
+    dl dd:nth-of-type(2) {
+        grid-area: cook-time;
+    }
+
+    dl dd:nth-of-type(3) {
+        grid-area: total-time;
+    }
+
+    dl dd:nth-of-type(4) {
+        grid-area: author-name;
+    }
+
+    dl dd:nth-of-type(5) {
+        grid-area: serving-size;
+    }
+
+    .aside-recipes {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 2fr 1fr;
+        grid-template-areas: 
+        "img img2 img3 img4"
+        "description description2 description3 description4";
+        margin-left: 40px;
+    }
+
+    footer cite, footer small {
+        top: 50px;
+        left: 140px;
+    }
+
+    footer img {
+        margin-left: 20px;
+    }
+    
+    footer {
+        margin-bottom: 0;
+        padding-bottom: 10px;
+    }
+
+}
+
+
+
+
+
