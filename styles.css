@@ -608,9 +608,10 @@ nav a{
 @media (min-width: 1076px) {
     nav ul {
         width: 70%;
-        top: 2vh;
+        top: .5vh;
         left: 0;
         margin-left: 15%;
+        max-height: 150px;
         background-color: transparent;
         box-shadow: none;
     }
@@ -662,6 +663,7 @@ nav a{
         justify-content: flex-start;
         gap: 40px;
         box-sizing: border-box;
+        z-index: 1;
     }
 
     menu li {
@@ -672,7 +674,7 @@ nav a{
     #intro {
         display: grid;
         grid-template-columns: 1fr 1.3fr;
-        margin-left: 8.35vw;
+        margin-left: 5vw;
         position: relative;
         top: -92vh;
     }
